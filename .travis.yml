@@ -15,15 +15,6 @@ script: "script/run_build"
 rvm:
   - 2.4.1
 matrix:
-  include:
-    - rvm: jruby
-      env: JRUBY_OPTS='--server -Xcompile.invokedynamic=false -Xcompat.version=2.0'
-    - rvm: jruby-head
-      env: JRUBY_OPTS='--server -Xcompile.invokedynamic=false'
-    - rvm: jruby-18mode
-      env: JRUBY_OPTS='--server -Xcompile.invokedynamic=false'
-    - rvm: jruby
-      env: JRUBY_OPTS='--server -Xcompile.invokedynamic=false'
   allow_failures:
     - rvm: jruby-head
       env: JRUBY_OPTS='--server -Xcompile.invokedynamic=false'
